@@ -9,11 +9,11 @@ object Main {
         }
     }
 
-  def randomly(chance: Double)(output_1: => Int)(output_2: => Int): Int = {
+  def randomly(chance: Double)(output1: => Int)(output2: => Int): Int = {
     val random = new scala.util.Random
     if(random.nextDouble < chance)
-      output_1
+      output1
     else
-      output_2
+      output2
     }
 }
