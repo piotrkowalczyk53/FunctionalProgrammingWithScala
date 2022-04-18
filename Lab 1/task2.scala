@@ -7,7 +7,8 @@ object Main {
 
   def sumAll(input: Int*): Int = {
     var output = 0;
-    for(e <- input) output += e;
+    for(x <- input)
+      output += x;
     output
   }
 
