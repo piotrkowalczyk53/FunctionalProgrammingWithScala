@@ -12,9 +12,9 @@ object Main {
     output
   }
 
-  def repN(count: Int, fun: Int => Int, value: Int) : Int = {
-    if(count == 0)
+  def repN(repeat: Int, fun: Int => Int, value: Int) : Int = {
+    if(repeat == 0)
       return value
-    repN(count-1, fun, fun(value))
+    repN(repeat-1, fun, fun(value))
     }
 }
