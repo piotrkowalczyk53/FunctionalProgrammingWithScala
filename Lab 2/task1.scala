@@ -24,9 +24,9 @@ object Main {
     println("-")
   }
   
-  def repN(times: Int, fun: Int => Int, first: Int) : Int = {
-    if (times == 0)
-      return first
-    repN(times-1, fun, fun(first))
+  def repN(repeat: Int, fun: Int => Int, value: Int) : Int = {
+    if (repeat == 0)
+      return value
+    repN(repeat-1, fun, fun(value))
   }
 }
