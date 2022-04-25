@@ -1,5 +1,6 @@
 import scala.concurrent._
 import ExecutionContext.Implicits.global
+import scala.util.{Success, Failure}
 import scala.util.{Success, Failure, Random}
 import scala.concurrent.duration._
 
@@ -15,13 +16,13 @@ object Main{
   }
   
   def subSearch(data: Vector[Char], ans:Char):Char = {
-    if(data.contains(ans)) 
-      ans
-    else
-      '.'
+  if(data.contains(ans)) 
+    ans
+  else
+    '.'
   }
 
-  def psearch(data: Vector[Char], ans: Char) : Future[List[Char]] = {
+    def psearch(data: Vector[Char], ans: Char) : Future[List[Char]] = {
     val divided = data.grouped(data.size/10).toList
     val answer = for(e <- divided) yield Future{subSearch(e, ans)}
     Future.sequence(answer)
